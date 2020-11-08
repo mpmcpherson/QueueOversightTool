@@ -16,7 +16,7 @@
 	<div class="wrapper ninety" id="container">
 
 		<div class="leftBar ninety" id="leftBar">
-			left bar
+			<div><b>ACTIVE USERS</b></div>
 		</div>
 
 		<div class="mainBody ninety" id="body">
@@ -24,9 +24,9 @@
 				<h3>Page Title</h3>
 			</div> 
 			<!--<button id="btn">Top Button Text</button>-->
-			<div id="text">Here's some text, and isn't it interesting?</div>
-			<div id="text">Lorem ipsum dolor sit amet. Dulche et decorum est</div>
-			<div id="text">Here's some text, and isn't it interesting?</div>
+			<div class="text">Here's some text, and isn't it interesting?</div>
+			<div class="text">Lorem ipsum dolor sit amet. Dulche et decorum est</div>
+			<div class="text">Here's some text, and isn't it interesting?</div>
 			<div> End Text		</div>	
 		</div>
 
@@ -42,10 +42,25 @@
 	docReady(function() {
     	let leftbar = document.getElementById('leftBar');
     	leftbar.setAttribute("class","leftBar full")
+
+    	let target = document.getElementById('leftBar');
+
+
+    	getRequest('resources/loadMain.php',
+    		function(response)
+    		{
+    			insertData(target,response);
+    		},
+    		function(response)
+    		{
+    			insertData(target,"An error has occurred during your request: " + response);
+    		},
+    		null);
+
 	});
 
  
-	button.addEventListener('click', function() {
+	/*button.addEventListener('click', function() {
 		//console.log("hit click");
 		alert("click");
   		/*getRequest('basicGenerator.php',
@@ -57,9 +72,19 @@
   				resultDiv.innerHTML = 'An error occurred during your request: ' +  response.status + ' ' + response.statusText;
   			},
   			null);
-*/
+
 	});
-
-
+*/
+	function insertData(target, data)
+	{
+		//formatting stuff here
+		console.log(data);
+		let res = JSON.parse(data);
+		console.log(res);
+		for(let i = 0; i < res.length; i++)
+		{
+			target.innerHTML = target.innerHTML+"<div><b>id:</b> "+res[i]['id']+" <b>Name:</b> "+res[i]['first_name'] +" "+res[i]['last_name']+"<div>";
+		}
+	}
 
 </script>

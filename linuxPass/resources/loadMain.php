@@ -7,18 +7,25 @@
 
 	$result = $conn->query($sql);
 
-	//var_dump($conn);
+	
+
+	
 
 	if ($result->num_rows > 0) {
-	  // output data of each row
-		echo "\n";
-	  while($row = $result->fetch_assoc()) {
-	    echo "id: " . $row["id"]. " - name: " . $row["first_name"]. " " . $row["last_name"]. "\n";
-	  }
-	} else {
-	  echo "0 results";
+	$returnValue = array();
+
+	// output data of each row
+	
+		while($row = $result->fetch_assoc()) {
+			array_push($returnValue, $row);
+			//array_push($returnValue, "[id: " . $row["id"]. "] [name: " . $row["first_name"]. " " . $row["last_name"] . "]");
+		}
+	} 
+	else {
+		array_push($returnValue, "0 results");
 	}
 	$conn->close();
 
-
+	echo json_encode($returnValue);
+	exit;
 ?>
