@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Add your title here</title>
+<title>Queue Supervision Interface</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="css\style.css">
 
@@ -21,13 +21,9 @@
 
 		<div class="mainBody ninety" id="body">
 			<div class="header">
-				<h3>Page Title</h3>
+				<h3>Status Readout</h3>
 			</div> 
-			<!--<button id="btn">Top Button Text</button>-->
-			<div class="text">Here's some text, and isn't it interesting?</div>
-			<div class="text">Lorem ipsum dolor sit amet. Dulche et decorum est</div>
-			<div class="text">Here's some text, and isn't it interesting?</div>
-			<div> End Text		</div>	
+
 		</div>
 
 	</div>
