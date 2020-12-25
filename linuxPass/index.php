@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html>
@@ -27,6 +28,7 @@
 		</div>
 
 	</div>
+	<?php require 'pierrefrancoisdulac.php'; ?>
 </body>	
 </html>
 
