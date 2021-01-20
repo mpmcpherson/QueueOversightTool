@@ -83,6 +83,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "linuxPass/index.php",
+			"settings":
+			{
+				"buffer_size": 2053,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "linuxPass/resources/pierrefrancoisdulac.php",
+			"settings":
+			{
+				"buffer_size": 585,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -152,7 +170,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/michaelmcpherson/src/QueueOversightTool"
+		"/home/michaelmcpherson/src/QueueOversightTool",
+		"/home/michaelmcpherson/src/QueueOversightTool/linuxPass",
+		"/home/michaelmcpherson/src/QueueOversightTool/linuxPass/resources"
 	],
 	"file_history":
 	[
@@ -318,8 +338,65 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "linuxPass/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2053,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								642,
+								642
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "linuxPass/resources/pierrefrancoisdulac.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 585,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								585,
+								585
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
