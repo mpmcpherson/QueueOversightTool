@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 
 <html>
+<?php require 'resources/uiConfig.php';?>
 <head>
-<title>Queue Supervision Interface</title>
+<title><?php echo $title; ?></title> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="css\style.css">
 
