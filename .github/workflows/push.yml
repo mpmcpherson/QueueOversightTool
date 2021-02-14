@@ -13,4 +13,4 @@ jobs:
       with:
         server: 69.163.197.191
         username: dh_urwmjh
-        password: ${{ secrets.FTPPASSWORD }}
+        password: ${{ secrets.FTPASS }}
