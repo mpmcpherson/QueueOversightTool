@@ -11,6 +11,6 @@ jobs:
     - name: Sync_files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: queueoversight.mpmcpherson.com
+        server: 69.163.197.191
         username: dh_urwmjh
         password: ${{ secrets.FTPPASSWORD }}
