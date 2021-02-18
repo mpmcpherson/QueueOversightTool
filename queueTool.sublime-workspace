@@ -1,0 +1,669 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"container",
+				"container-fluid"
+			],
+			[
+				"text",
+				"text_entry"
+			],
+			[
+				"file",
+				"file_get_contents"
+			],
+			[
+				"htmlspec",
+				"htmlspecialchars_decode"
+			],
+			[
+				"serializ",
+				"v8.serialize"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"tinymc",
+				"tinymce"
+			],
+			[
+				"enco",
+				"encodeText"
+			],
+			[
+				"bl",
+				"inline-block\tdisplay"
+			],
+			[
+				"inline",
+				"inline-block\tdisplay"
+			],
+			[
+				"thee",
+				"theEnd"
+			],
+			[
+				"htmlsp",
+				"htmlspecialchars_decode"
+			],
+			[
+				"htmlspe",
+				"htmlspecialchars"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"pritn",
+				"print_r"
+			],
+			[
+				"recurs",
+				"recurseList\tstatement"
+			],
+			[
+				"obj",
+				"objName\tparam"
+			],
+			[
+				"ob",
+				"objName\tparam"
+			],
+			[
+				"filea",
+				"fileAryElem"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<?php require 'resources/uiConfig.php';?>\n<head>\n<title><?php echo $title; ?></title> \n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no\" />\n<link rel=\"stylesheet\" href=\"css\\style.css\">\n\n</head>\n\n<body>\n\t<?php require 'resources/logger.php';?>\n\n\t<div class=\"oneTenth pageHead\">true header</div>\n\n\t<div class=\"wrapper ninety\" id=\"container\">\n\n\t\t<div class=\"leftBar ninety\" id=\"leftBar\">\n\t\t\t<div><b>ACTIVE USERS</b></div>\n\t\t</div>\n\n\t\t<div class=\"mainBody ninety\" id=\"body\">\n\t\t\t<div class=\"header\">\n\t\t\t\t<h3>Status Readout</h3>\n\t\t\t</div> \n\n\t\t</div>\n\n\t</div>\n\t<?php require 'pierrefrancoisdulac.php'; ?>\n</body>\t\n</html>\n\n<script type=\"text/javascript\" src=\"js\\helper.js\"></script>\n<script type=\"text/javascript\">\n\tvar button = document.getElementById('btn');\n\tvar resultDiv = document.getElementById('results');\n\n\tdocReady(function() {\n    \tlet leftbar = document.getElementById('leftBar');\n    \tleftbar.setAttribute(\"class\",\"leftBar full\")\n\n    \tlet target = document.getElementById('leftBar');\n\n\n    \tgetRequest('resources/loadMain.php',\n    \t\tfunction(response)\n    \t\t{\n    \t\t\tinsertData(target,response);\n    \t\t},\n    \t\tfunction(response)\n    \t\t{\n    \t\t\tinsertData(target,\"An error has occurred during your request: \" + response);\n    \t\t},\n    \t\tnull);\n\n\t});\n\n \n\t/*button.addEventListener('click', function() {\n\t\t//console.log(\"hit click\");\n\t\talert(\"click\");\n  \t\t/*getRequest('basicGenerator.php',\n  \t\t\tfunction(response){\n  \t\t\t\t//console.log(response);\n  \t\t\t\tresultDiv.innerHTML = response;\n  \t\t\t},\n  \t\t\tfunction(response){\n  \t\t\t\tresultDiv.innerHTML = 'An error occurred during your request: ' +  response.status + ' ' + response.statusText;\n  \t\t\t},\n  \t\t\tnull);\n\n\t});\n*/\n\tfunction insertData(target, data)\n\t{\n\t\t//formatting stuff here\n\t\tconsole.log(data);\n\t\tlet res = JSON.parse(data);\n\t\tconsole.log(res);\n\t\tfor(let i = 0; i < res.length; i++)\n\t\t{\n\t\t\ttarget.innerHTML = target.innerHTML+\"<div><b>id:</b> \"+res[i]['id']+\" <b>Name:</b> \"+res[i]['first_name'] +\" \"+res[i]['last_name']+\"<div>\";\n\t\t}\n\t}\n\n</script>\n",
+			"file": "linuxPass/index.php",
+			"file_size": 2089,
+			"file_write_time": 132578175462025041,
+			"settings":
+			{
+				"buffer_size": 2089,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "html { height: 100%; margin: 0px; padding: 0px; }\nbody\n{\n\tbackground-color: #edefd3;\n\theight: 100%; margin: 0px; padding: 0px;\n}\n\n.leftBar\n{\n\tbackground-color: #e1e4b4;\n\t-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */\n\t-moz-box-flex: 1;         /* OLD - Firefox 19- */\n\twidth: 20%;               /* For old syntax, otherwise collapses. */\n\t-webkit-flex: 1;          /* Chrome */\n\t-ms-flex: 1;              /* IE 10 */\n\tflex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */\n\tbox-shadow: 10px 5px 5px gray;\n}\n\n.wrapper\n{\n  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */\n  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */\n  display: -ms-flexbox;      /* TWEENER - IE 10 */\n  display: -webkit-flex;     /* NEW - Chrome */\n  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */\n}\n.header\n{\n\n}\n.pageHead\n{\n\tbox-shadow: 10px 5px 5px gray;\n}\n.mainBody\n{\n  width: 80%;\n  padding-left: 13px;\n}\n.oneTenth { height: 10%; }\n.oneFifth { height: 20%; }\n.oneQuarter { height: 25%; }\n.half { height: 50%; }\n.threeQuarters { height: 75%;}\n.eighty { height: 80%; }\n.ninety { height: 90%; }\n.full { height: 100% }",
+			"file": "linuxPass/css/style.css",
+			"file_size": 1174,
+			"file_write_time": 132492726747177700,
+			"settings":
+			{
+				"buffer_size": 1174,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "rfJasBMC",
+			"settings":
+			{
+				"buffer_size": 8,
+				"line_ending": "Unix",
+				"name": "rfJasBMC"
+			}
+		},
+		{
+			"contents": "<?php\n\t$header = \"header text\";\n\t$title = \"Queue Supervision Interface\";\n\t$leftBar=\"left bar value\";\n\t$rightBar=\"right bar value\";\n\t$viewportTitle=\"viewport title\";\n?>",
+			"file": "linuxPass/resources/uiConfig.php",
+			"file_size": 167,
+			"file_write_time": 132578019833974765,
+			"settings":
+			{
+				"buffer_size": 167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "I LOVE YOU!!\nI love you, too, Buddy! I hope you're having a nice Monday. I had a good morning with you. \nI love you, too, Buddy! I hope you're having a nice Monday. I had a good morning with you.\n",
+			"settings":
+			{
+				"buffer_size": 196,
+				"line_ending": "Unix",
+				"name": "I LOVE YOU!!"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"pretty",
+				"Pretty JSON: Format JSON Lines"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"p",
+				"Package Control: Add Repository"
+			],
+			[
+				"package control",
+				"Package Control: Add Channel"
+			],
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 193.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/michaelmcpherson/src/whoIsLoader/composer.lock",
+		"/home/michaelmcpherson/src/QueueOversightTool/linuxPass/resources/pierrefrancoisdulac.php",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/JSLint/JSLint.sublime-settings",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/ESLint/ESLint.sublime-settings",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/User/ESLint.sublime-settings",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/User/JSLint.sublime-settings",
+		"/home/michaelmcpherson/src/roundtable/adminBootstrap/Admin/blue/assets/css/menu.css",
+		"/home/michaelmcpherson/src/roundtable/paypal button",
+		"/home/michaelmcpherson/src/QueueOversightTool/.gitignore",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/User/GutterColor.sublime-settings",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/Gutter Color/GutterColor.sublime-settings",
+		"/home/michaelmcpherson/src/clientSideBlogger/composer.json",
+		"/home/michaelmcpherson/src/roundtable/webmethods/defaultConnector.php",
+		"/tmp/fz3temp-2/crypt.php",
+		"/tmp/fz3temp-2/admin.php",
+		"/home/michaelmcpherson/src/RoundTable/.gitignore",
+		"/home/michaelmcpherson/Downloads/us_california-aes-128-cbc-udp-dns.ovpn",
+		"/tmp/fz3temp-2/log.php",
+		"/tmp/fz3temp-2/challenge.php",
+		"/tmp/fz3temp-2/index 2.php",
+		"/tmp/fz3temp-2/Com.php",
+		"/tmp/fz3temp-2/hostname.php",
+		"/tmp/fz3temp-2/profile.php",
+		"/tmp/fz3temp-2/index 3.php",
+		"/tmp/fz3temp-2/vcard.php",
+		"/tmp/fz3temp-2/login.php",
+		"/tmp/fz3temp-2/pass.php",
+		"/tmp/fz3temp-2/index.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/README.md",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/couchTesting.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/objects/genericObject.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/objects/text_entry.php",
+		"/home/michaelmcpherson/Documents/flailing.php",
+		"/home/michaelmcpherson/Documents/jobHunting/CEO and tech person MPX",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/config/config-prod.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/config/config-dev.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/shared/CouchDBConnection.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/shared/CouchDBRequest.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/shared/CouchDBResponse.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/operations/CouchDBResponse.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/shared/CouchDBConnection",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/operations/read.php",
+		"/home/michaelmcpherson/src/phpInsecureREST/api/objects/read.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/resources/postHandler.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/phprc",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/index.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/js/helper.js",
+		"/home/michaelmcpherson/src/clientSideBlogger/README.md",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/resources/SFTPConnector.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/teasant.php",
+		"/var/www/html/blags/resources/postHandler.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/resources/loadPost.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/resources/postHandler.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/snippets.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/index.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/css/style.css",
+		"/var/www/html/blogBase/resources/postHandler.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/resources/config.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/css/buttons.css",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/resources/dbConnector.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/css/style.css",
+		"/home/michaelmcpherson/Documents/factualpass",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/resources/mongoConnector.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/loremTypical",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/pirateIpsum",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/worseHipster",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/lorem1.txt",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/kafka.txt",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/hipSum.txt",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/LatinCicero",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/posts/EnglishCicero",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/resources/linkLoader.php",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/frontEnd/resources/config.php",
+		"/home/michaelmcpherson/Documents/passcodes",
+		"/etc/php/7.3/cli/php.ini",
+		"/home/michaelmcpherson/src/clientSideBlogger/.gitignore",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/js/themes/silver/theme.js",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/index.php",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/site/index.php",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/index.php",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/Plot Episode 5",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/Plot Episode 6",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/Plot Episode 4",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/Plot Episode 3",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/plot episode 1",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/Plot Episode 2",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/css/wysiwyg.css",
+		"/home/michaelmcpherson/src/clientSideBlogger/bloggingClientBase/css/pure-min.css",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/plot types",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/plot hooks",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/more dnd plots",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/event_villain_scratchList",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/dungeon goals",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/basicGenerator.php",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/05dndPlotList",
+		"/home/michaelmcpherson/Documents/smugdamian",
+		"/home/michaelmcpherson/src/writtenRecords/how to symbolic link your www-http folder to dev source",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/README.md",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/css/style.css",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/js/themes/silver/theme.js",
+		"/home/michaelmcpherson/src/notMine/wysiwyg.css/wysiwyg.sass",
+		"/home/michaelmcpherson/src/notMine/wysiwyg.css/wysiwyg.css",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/session outilnes",
+		"/home/michaelmcpherson/src/gitRecurse/gitScan2.config",
+		"/home/michaelmcpherson/src/gitRecurse/gitScan.sh",
+		"/home/michaelmcpherson/src/gitRecurse/gitPull.config",
+		"/home/michaelmcpherson/src/gitRecurse/confBuilder.sh",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Beluin Keyran",
+		"/etc/php/7.3/apache2/php.ini",
+		"/home/michaelmcpherson/src/QueueOversightTool/linuxPass/dbConnector.php",
+		"/home/michaelmcpherson/src/steganograph/the prophet",
+		"/home/michaelmcpherson/src/steganograph/readText.php",
+		"/home/michaelmcpherson/src/steganograph/encode.php",
+		"/home/michaelmcpherson/src/steganograph/decode.php",
+		"/home/michaelmcpherson/src/quickscrape/vacuum.php",
+		"/home/michaelmcpherson/Downloads/glg.txt",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/js/helper.js",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/horribleCorpus.php",
+		"/home/michaelmcpherson/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/resources/logger.php",
+		"/home/michaelmcpherson/src/newUIframework/uiSite/js/app.js",
+		"/home/michaelmcpherson/src/DnDModuleGenerator/site/adventureGenerator/index.php",
+		"/home/michaelmcpherson/src/gitRecurse/bintest.sh",
+		"/home/michaelmcpherson/src/gitRecurse/gitScan.config",
+		"/home/michaelmcpherson/src/gitRecurse/dmg adventure generator text",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/siteVersion/strangegods/index.php",
+		"/home/michaelmcpherson/src/writtenRecords/DnD/Necromancer Nine/the strange gods of the land"
+	],
+	"find":
+	{
+		"height": 45.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "linuxPass/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2089,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								280
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "linuxPass/css/style.css",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1174,
+						"regions":
+						{
+							"gutter_color_141":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#e1e4b4.png",
+								"regions":
+								[
+									[
+										141,
+										168
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_498":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/gray.png",
+								"regions":
+								[
+									[
+										498,
+										529
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_57":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#edefd3.png",
+								"regions":
+								[
+									[
+										57,
+										84
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_881":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/gray.png",
+								"regions":
+								[
+									[
+										881,
+										912
+									]
+								],
+								"scope": "gutter_color"
+							}
+						},
+						"selection":
+						[
+							[
+								924,
+								924
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "rfJasBMC",
+							"default_dir": "/home/michaelmcpherson/src/QueueOversightTool/linuxPass/css",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "linuxPass/resources/uiConfig.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 196,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"auto_name": "I LOVE YOU!!",
+							"default_dir": "/home/michaelmcpherson/src/QueueOversightTool/linuxPass/resources",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 45.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 121.0
+	},
+	"output.exec":
+	{
+		"height": 121.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.nodejs":
+	{
+		"height": 301.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "queueTool.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 788.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 276.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
